@@ -1,0 +1,345 @@
+/*---------------------------------------------------------------------------
+[CSS LAYOUT FOR CAMAGRU]
+
+
+How to use :
+- Simply copy the title to do a search in this file
+- Or copy the individual content to go straight to that element/class/id
+
+
+[Table of content]
+
+
+Master_html_tag [control shared html tag css]
+	-	body
+
+	-	textarea, input, button, fieldset
+
+	-	textarea, input
+
+	-	span
+
+
+Master_class [control shared class css]
+	-	.icon
+
+	-	.btn
+
+
+Login_pop_up [control the login pop up box css]
+	-	#login_box_container
+
+	-	#login_box :
+		-	#login_deco
+		-	.close
+		-	span
+		-	.login_title
+		-	.input_icon
+		-	input
+		-	input not submit
+		-	input submit
+		-	input submit : hover
+		-	.login_box_text_1
+		-	.login_box_text_2
+
+	-	@media max-width 600px
+		-	#login_box :
+			-	.input_icon
+			-	input not submit
+			-	login_box_text_2
+
+
+Navigation [control the navigation menu css]
+	-	#nav_container
+
+	-	.nav
+	
+
+Footer
+	-	#footer
+
+	-	#footer span
+
+
+
+-----------------------------------------------------------------------------*/
+
+
+/*-----------------------------[Master_control]-------------------------------*/
+
+html {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    /*background: url(../img/background.jpg) center;*/
+    position: relative;
+    margin: 0;
+    padding-bottom: 100px;
+    width: 100%;
+    min-height: 100%;
+}
+
+textarea,
+input,
+button,
+fieldset {
+    outline: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+span,
+input {
+    color: #7A7A7A;
+    font-family: arial;
+    font-size: 1.2em;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+label {
+    display: block;
+}
+
+
+/*-----------------------------[Master_class]---------------------------------*/
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btn {
+    background: none;
+    border: none;
+    padding-right: 10px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+
+/*-----------------------------[Login_pop_up]---------------------------------*/
+
+#login_box_container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#login_box {
+    z-index: 100;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 18em;
+    background: #F0F0F0;
+    margin: 250px auto auto auto;
+    padding-bottom: 10px;
+}
+
+#login_box #login_deco {
+    max-width: 18em;
+    min-height: 0.5em;
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+    border-radius: 10px 10px 0px 0px;
+    width: inherit;
+}
+
+#login_box .close {
+    cursor: pointer;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+#login_box span {
+    display: block;
+}
+
+#login_box .login_title {
+    width: 100%;
+    font-size: 16px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#login_box .input_icon {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#login_box input {
+    background-color: #DDDDDD;
+    height: 40px;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+#login_box input:not([type="submit"]) {
+    width: 100%;
+    padding-left: 38px;
+}
+
+#login_box input[type="submit"] {
+    width: 100%;
+    margin: 20px auto 30px auto;
+}
+
+#login_box input[type="submit"]:hover {
+    background-color: #888888;
+    color: #DDDDDD;
+    cursor: pointer;
+}
+
+#login_box .login_box_text_1 {
+    font-size: 10px;
+}
+
+#login_box .login_box_text_2 {
+    float: right;
+    margin-top: -12px;
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    #login_box {
+        margin-top: 100px;
+    }
+    #login_box .input_icon {
+        display: none;
+    }
+    #login_box input:not([type="submit"]) {
+        width: 100%;
+        text-align: center;
+        padding-left: 0px;
+    }
+    #login_box .login_box_text_2 {
+        float: left;
+        margin-top: 12px;
+    }
+}
+
+
+/*-----------------------------[Logo]-----------------------------------------*/
+
+#logo_container {
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 17em;
+    margin-left: 10px;
+}
+
+
+/*-----------------------------[Navigation]------------------------------------*/
+
+#nav_container {
+    /*border: 1px solid black;*/
+    width: 100%;
+    /*height					: 50px;*/
+}
+
+#login {
+    float: right;
+    /*border: 1px solid black;*/
+}
+
+#login .login_text {
+    float: left;
+    padding-top: 2px;
+    padding-right: 5px;
+}
+
+.nav {
+    margin-left: 20px;
+    margin-right: 10px;
+    padding-top: 5px;
+    /*border					: 1px solid black;*/
+    display: inline;
+    border-bottom: solid transparent 5px;
+}
+
+.nav:hover {
+    border-bottom: solid #55FFFF 5px;
+}
+
+#menu_icon {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav {
+        max-width: 100%;
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 0px;
+        display: none;
+    }
+    .nav:hover {
+        border-bottom: solid transparent 5px;
+    }
+    #menu_icon {
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
+
+/*-----------------------------[Home]-----------------------------------------*/
+
+#home_main_container {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*----------------------------------------------------------------------------*/
+
+
+/*-----------------------------[Footer]---------------------------------------*/
+
+#footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+#footer span {
+    font-size: 0.7rem;
+    margin-left: 15px;
+    font-style: italic;
+}
+
+
+/*----------------------------------------------------------------------------*/
